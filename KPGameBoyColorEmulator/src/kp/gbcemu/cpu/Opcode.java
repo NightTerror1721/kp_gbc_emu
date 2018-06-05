@@ -304,6 +304,24 @@ public final class Opcode
         op(BIT0a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x01); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT0m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x01); cpu.reg.M = 3; cpu.reg.T = 12; });
         
+        op(RES0b, (cpu, mmu) -> { cpu.reg.B &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0c, (cpu, mmu) -> { cpu.reg.C &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0d, (cpu, mmu) -> { cpu.reg.D &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0e, (cpu, mmu) -> { cpu.reg.E &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0h, (cpu, mmu) -> { cpu.reg.H &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0l, (cpu, mmu) -> { cpu.reg.L &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0a, (cpu, mmu) -> { cpu.reg.A &= 0xFE; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES0m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xFE; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET0b, (cpu, mmu) -> { cpu.reg.B |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0c, (cpu, mmu) -> { cpu.reg.C |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0d, (cpu, mmu) -> { cpu.reg.D |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0e, (cpu, mmu) -> { cpu.reg.E |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0h, (cpu, mmu) -> { cpu.reg.H |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0l, (cpu, mmu) -> { cpu.reg.L |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0a, (cpu, mmu) -> { cpu.reg.A |= 0x01; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET0m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x01; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
         op(BIT1b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x02); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT1c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x02); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT1d, (cpu, mmu) -> { fz(cpu, cpu.reg.D & 0x02); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -312,6 +330,24 @@ public final class Opcode
         op(BIT1l, (cpu, mmu) -> { fz(cpu, cpu.reg.L & 0x02); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT1a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x02); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT1m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x02); cpu.reg.M = 3; cpu.reg.T = 12; });
+        
+        op(RES1b, (cpu, mmu) -> { cpu.reg.B &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1c, (cpu, mmu) -> { cpu.reg.C &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1d, (cpu, mmu) -> { cpu.reg.D &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1e, (cpu, mmu) -> { cpu.reg.E &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1h, (cpu, mmu) -> { cpu.reg.H &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1l, (cpu, mmu) -> { cpu.reg.L &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1a, (cpu, mmu) -> { cpu.reg.A &= 0xFD; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES1m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xFD; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET1b, (cpu, mmu) -> { cpu.reg.B |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1c, (cpu, mmu) -> { cpu.reg.C |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1d, (cpu, mmu) -> { cpu.reg.D |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1e, (cpu, mmu) -> { cpu.reg.E |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1h, (cpu, mmu) -> { cpu.reg.H |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1l, (cpu, mmu) -> { cpu.reg.L |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1a, (cpu, mmu) -> { cpu.reg.A |= 0x02; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET1m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x02; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
         
         op(BIT2b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x04); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT2c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x04); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -322,6 +358,24 @@ public final class Opcode
         op(BIT2a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x04); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT2m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x04); cpu.reg.M = 3; cpu.reg.T = 12; });
         
+        op(RES2b, (cpu, mmu) -> { cpu.reg.B &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2c, (cpu, mmu) -> { cpu.reg.C &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2d, (cpu, mmu) -> { cpu.reg.D &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2e, (cpu, mmu) -> { cpu.reg.E &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2h, (cpu, mmu) -> { cpu.reg.H &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2l, (cpu, mmu) -> { cpu.reg.L &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2a, (cpu, mmu) -> { cpu.reg.A &= 0xFB; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES2m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xFB; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET2b, (cpu, mmu) -> { cpu.reg.B |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2c, (cpu, mmu) -> { cpu.reg.C |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2d, (cpu, mmu) -> { cpu.reg.D |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2e, (cpu, mmu) -> { cpu.reg.E |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2h, (cpu, mmu) -> { cpu.reg.H |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2l, (cpu, mmu) -> { cpu.reg.L |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2a, (cpu, mmu) -> { cpu.reg.A |= 0x04; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET2m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x04; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
         op(BIT3b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x08); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT3c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x08); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT3d, (cpu, mmu) -> { fz(cpu, cpu.reg.D & 0x08); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -330,6 +384,24 @@ public final class Opcode
         op(BIT3l, (cpu, mmu) -> { fz(cpu, cpu.reg.L & 0x08); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT3a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x08); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT3m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x08); cpu.reg.M = 3; cpu.reg.T = 12; });
+        
+        op(RES3b, (cpu, mmu) -> { cpu.reg.B &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3c, (cpu, mmu) -> { cpu.reg.C &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3d, (cpu, mmu) -> { cpu.reg.D &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3e, (cpu, mmu) -> { cpu.reg.E &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3h, (cpu, mmu) -> { cpu.reg.H &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3l, (cpu, mmu) -> { cpu.reg.L &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3a, (cpu, mmu) -> { cpu.reg.A &= 0xF7; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES3m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xF7; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET3b, (cpu, mmu) -> { cpu.reg.B |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3c, (cpu, mmu) -> { cpu.reg.C |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3d, (cpu, mmu) -> { cpu.reg.D |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3e, (cpu, mmu) -> { cpu.reg.E |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3h, (cpu, mmu) -> { cpu.reg.H |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3l, (cpu, mmu) -> { cpu.reg.L |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3a, (cpu, mmu) -> { cpu.reg.A |= 0x08; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET3m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x08; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
         
         op(BIT4b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x10); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT4c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x10); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -340,6 +412,24 @@ public final class Opcode
         op(BIT4a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x10); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT4m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x10); cpu.reg.M = 3; cpu.reg.T = 12; });
         
+        op(RES4b, (cpu, mmu) -> { cpu.reg.B &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4c, (cpu, mmu) -> { cpu.reg.C &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4d, (cpu, mmu) -> { cpu.reg.D &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4e, (cpu, mmu) -> { cpu.reg.E &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4h, (cpu, mmu) -> { cpu.reg.H &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4l, (cpu, mmu) -> { cpu.reg.L &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4a, (cpu, mmu) -> { cpu.reg.A &= 0xEF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES4m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xEF; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET4b, (cpu, mmu) -> { cpu.reg.B |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4c, (cpu, mmu) -> { cpu.reg.C |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4d, (cpu, mmu) -> { cpu.reg.D |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4e, (cpu, mmu) -> { cpu.reg.E |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4h, (cpu, mmu) -> { cpu.reg.H |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4l, (cpu, mmu) -> { cpu.reg.L |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4a, (cpu, mmu) -> { cpu.reg.A |= 0x10; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET4m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x10; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
         op(BIT5b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x20); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT5c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x20); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT5d, (cpu, mmu) -> { fz(cpu, cpu.reg.D & 0x20); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -348,6 +438,24 @@ public final class Opcode
         op(BIT5l, (cpu, mmu) -> { fz(cpu, cpu.reg.L & 0x20); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT5a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x20); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT5m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x20); cpu.reg.M = 3; cpu.reg.T = 12; });
+        
+        op(RES5b, (cpu, mmu) -> { cpu.reg.B &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5c, (cpu, mmu) -> { cpu.reg.C &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5d, (cpu, mmu) -> { cpu.reg.D &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5e, (cpu, mmu) -> { cpu.reg.E &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5h, (cpu, mmu) -> { cpu.reg.H &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5l, (cpu, mmu) -> { cpu.reg.L &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5a, (cpu, mmu) -> { cpu.reg.A &= 0xDF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES5m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xDF; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET5b, (cpu, mmu) -> { cpu.reg.B |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5c, (cpu, mmu) -> { cpu.reg.C |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5d, (cpu, mmu) -> { cpu.reg.D |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5e, (cpu, mmu) -> { cpu.reg.E |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5h, (cpu, mmu) -> { cpu.reg.H |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5l, (cpu, mmu) -> { cpu.reg.L |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5a, (cpu, mmu) -> { cpu.reg.A |= 0x20; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET5m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x20; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
         
         op(BIT6b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x40); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT6c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x40); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -358,6 +466,24 @@ public final class Opcode
         op(BIT6a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x40); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT6m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x40); cpu.reg.M = 3; cpu.reg.T = 12; });
         
+        op(RES6b, (cpu, mmu) -> { cpu.reg.B &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6c, (cpu, mmu) -> { cpu.reg.C &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6d, (cpu, mmu) -> { cpu.reg.D &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6e, (cpu, mmu) -> { cpu.reg.E &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6h, (cpu, mmu) -> { cpu.reg.H &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6l, (cpu, mmu) -> { cpu.reg.L &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6a, (cpu, mmu) -> { cpu.reg.A &= 0xBF; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES6m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0xBF; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET6b, (cpu, mmu) -> { cpu.reg.B |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6c, (cpu, mmu) -> { cpu.reg.C |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6d, (cpu, mmu) -> { cpu.reg.D |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6e, (cpu, mmu) -> { cpu.reg.E |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6h, (cpu, mmu) -> { cpu.reg.H |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6l, (cpu, mmu) -> { cpu.reg.L |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6a, (cpu, mmu) -> { cpu.reg.A |= 0x40; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET6m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x40; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
         op(BIT7b, (cpu, mmu) -> { fz(cpu, cpu.reg.B & 0x80); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT7c, (cpu, mmu) -> { fz(cpu, cpu.reg.C & 0x80); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT7d, (cpu, mmu) -> { fz(cpu, cpu.reg.D & 0x80); cpu.reg.M = 2; cpu.reg.T = 8; });
@@ -366,6 +492,24 @@ public final class Opcode
         op(BIT7l, (cpu, mmu) -> { fz(cpu, cpu.reg.L & 0x80); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT7a, (cpu, mmu) -> { fz(cpu, cpu.reg.A & 0x80); cpu.reg.M = 2; cpu.reg.T = 8; });
         op(BIT7m, (cpu, mmu) -> { fz(cpu, mmu.rb((cpu.reg.H << 8) + cpu.reg.L) & 0x80); cpu.reg.M = 3; cpu.reg.T = 12; });
+        
+        op(RES7b, (cpu, mmu) -> { cpu.reg.B &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7c, (cpu, mmu) -> { cpu.reg.C &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7d, (cpu, mmu) -> { cpu.reg.D &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7e, (cpu, mmu) -> { cpu.reg.E &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7h, (cpu, mmu) -> { cpu.reg.H &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7l, (cpu, mmu) -> { cpu.reg.L &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7a, (cpu, mmu) -> { cpu.reg.A &= 0x7F; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(RES7m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i &= 0x7F; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
+        
+        op(SET7b, (cpu, mmu) -> { cpu.reg.B |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7c, (cpu, mmu) -> { cpu.reg.C |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7d, (cpu, mmu) -> { cpu.reg.D |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7e, (cpu, mmu) -> { cpu.reg.E |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7h, (cpu, mmu) -> { cpu.reg.H |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7l, (cpu, mmu) -> { cpu.reg.L |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7a, (cpu, mmu) -> { cpu.reg.A |= 0x80; cpu.reg.M = 2; cpu.reg.T = 8; });
+        op(SET7m, (cpu, mmu) -> { int i = mmu.rb((cpu.reg.H << 8) + cpu.reg.L); i |= 0x80; mmu.wb((cpu.reg.H << 8) + cpu.reg.L, i); cpu.reg.M = 4; cpu.reg.T = 16; });
         
         op(RLA, (cpu, mmu) -> { int ci = b(cpu.reg.F & 0x10); int co = b(cpu.reg.A & 0x80, 0x10); cpu.reg.A = (cpu.reg.A << 1) + ci; cpu.reg.A &= 0xff; cpu.reg.F = (cpu.reg.F & 0xEF) + co; cpu.reg.M = 1; cpu.reg.T = 4; });
         op(RLCA, (cpu, mmu) -> { int ci = b(cpu.reg.A & 0x80); int co = b(cpu.reg.A & 0x80, 0x10); cpu.reg.A = (cpu.reg.A << 1) + ci; cpu.reg.A &= 0xff; cpu.reg.F = (cpu.reg.F & 0xEF) + co; cpu.reg.M = 1; cpu.reg.T = 4; });
