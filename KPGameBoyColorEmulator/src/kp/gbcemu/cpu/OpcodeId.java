@@ -445,4 +445,148 @@ public final class OpcodeId
     public static final int BIT7l = 0xCB7D;
     public static final int BIT7m = 0xCB7E;
     public static final int BIT7a = 0xCB7F;
+    
+    // CB80
+    public static final int RES0b = 0xCB80;
+    public static final int RES0c = 0xCB81;
+    public static final int RES0d = 0xCB82;
+    public static final int RES0e = 0xCB83;
+    public static final int RES0h = 0xCB84;
+    public static final int RES0l = 0xCB85;
+    public static final int RES0m = 0xCB86;
+    public static final int RES0a = 0xCB87;
+    public static final int RES1b = 0xCB88;
+    public static final int RES1c = 0xCB89;
+    public static final int RES1d = 0xCB8A;
+    public static final int RES1e = 0xCB8B;
+    public static final int RES1h = 0xCB8C;
+    public static final int RES1l = 0xCB8D;
+    public static final int RES1m = 0xCB8E;
+    public static final int RES1a = 0xCB8F;
+    
+    // CB90
+    public static final int RES2b = 0xCB90;
+    public static final int RES2c = 0xCB91;
+    public static final int RES2d = 0xCB92;
+    public static final int RES2e = 0xCB93;
+    public static final int RES2h = 0xCB94;
+    public static final int RES2l = 0xCB95;
+    public static final int RES2m = 0xCB96;
+    public static final int RES2a = 0xCB97;
+    public static final int RES3b = 0xCB98;
+    public static final int RES3c = 0xCB99;
+    public static final int RES3d = 0xCB9A;
+    public static final int RES3e = 0xCB9B;
+    public static final int RES3h = 0xCB9C;
+    public static final int RES3l = 0xCB9D;
+    public static final int RES3m = 0xCB9E;
+    public static final int RES3a = 0xCB9F;
+    
+    // CBA0
+    public static final int RES4b = 0xCBA0;
+    public static final int RES4c = 0xCBA1;
+    public static final int RES4d = 0xCBA2;
+    public static final int RES4e = 0xCBA3;
+    public static final int RES4h = 0xCBA4;
+    public static final int RES4l = 0xCBA5;
+    public static final int RES4m = 0xCBA6;
+    public static final int RES4a = 0xCBA7;
+    public static final int RES5b = 0xCBA8;
+    public static final int RES5c = 0xCBA9;
+    public static final int RES5d = 0xCBAA;
+    public static final int RES5e = 0xCBAB;
+    public static final int RES5h = 0xCBAC;
+    public static final int RES5l = 0xCBAD;
+    public static final int RES5m = 0xCBAE;
+    public static final int RES5a = 0xCBAF;
+    
+    // CBB0
+    public static final int RES6b = 0xCBB0;
+    public static final int RES6c = 0xCBB1;
+    public static final int RES6d = 0xCBB2;
+    public static final int RES6e = 0xCBB3;
+    public static final int RES6h = 0xCBB4;
+    public static final int RES6l = 0xCBB5;
+    public static final int RES6m = 0xCBB6;
+    public static final int RES6a = 0xCBB7;
+    public static final int RES7b = 0xCBB8;
+    public static final int RES7c = 0xCBB9;
+    public static final int RES7d = 0xCBBA;
+    public static final int RES7e = 0xCBBB;
+    public static final int RES7h = 0xCBBC;
+    public static final int RES7l = 0xCBBD;
+    public static final int RES7m = 0xCBBE;
+    public static final int RES7a = 0xCBBF;
+    
+    // CBC0
+    public static final int SET0b = 0xCBC0;
+    public static final int SET0c = 0xCBC1;
+    public static final int SET0d = 0xCBC2;
+    public static final int SET0e = 0xCBC3;
+    public static final int SET0h = 0xCBC4;
+    public static final int SET0l = 0xCBC5;
+    public static final int SET0m = 0xCBC6;
+    public static final int SET0a = 0xCBC7;
+    public static final int SET1b = 0xCBC8;
+    public static final int SET1c = 0xCBC9;
+    public static final int SET1d = 0xCBCA;
+    public static final int SET1e = 0xCBCB;
+    public static final int SET1h = 0xCBCC;
+    public static final int SET1l = 0xCBCD;
+    public static final int SET1m = 0xCBCE;
+    public static final int SET1a = 0xCBCF;
+    
+    // CBD0
+    public static final int SET2b = 0xCBD0;
+    public static final int SET2c = 0xCBD1;
+    public static final int SET2d = 0xCBD2;
+    public static final int SET2e = 0xCBD3;
+    public static final int SET2h = 0xCBD4;
+    public static final int SET2l = 0xCBD5;
+    public static final int SET2m = 0xCBD6;
+    public static final int SET2a = 0xCBD7;
+    public static final int SET3b = 0xCBD8;
+    public static final int SET3c = 0xCBD9;
+    public static final int SET3d = 0xCBDA;
+    public static final int SET3e = 0xCBDB;
+    public static final int SET3h = 0xCBDC;
+    public static final int SET3l = 0xCBDD;
+    public static final int SET3m = 0xCBDE;
+    public static final int SET3a = 0xCBDF;
+    
+    // CBE0
+    public static final int SET4b = 0xCBE0;
+    public static final int SET4c = 0xCBE1;
+    public static final int SET4d = 0xCBE2;
+    public static final int SET4e = 0xCBE3;
+    public static final int SET4h = 0xCBE4;
+    public static final int SET4l = 0xCBE5;
+    public static final int SET4m = 0xCBE6;
+    public static final int SET4a = 0xCBE7;
+    public static final int SET5b = 0xCBE8;
+    public static final int SET5c = 0xCBE9;
+    public static final int SET5d = 0xCBEA;
+    public static final int SET5e = 0xCBEB;
+    public static final int SET5h = 0xCBEC;
+    public static final int SET5l = 0xCBED;
+    public static final int SET5m = 0xCBEE;
+    public static final int SET5a = 0xCBEF;
+    
+    // CBF0
+    public static final int SET6b = 0xCBF0;
+    public static final int SET6c = 0xCBF1;
+    public static final int SET6d = 0xCBF2;
+    public static final int SET6e = 0xCBF3;
+    public static final int SET6h = 0xCBF4;
+    public static final int SET6l = 0xCBF5;
+    public static final int SET6m = 0xCBF6;
+    public static final int SET6a = 0xCBF7;
+    public static final int SET7b = 0xCBF8;
+    public static final int SET7c = 0xCBF9;
+    public static final int SET7d = 0xCBFA;
+    public static final int SET7e = 0xCBFB;
+    public static final int SET7h = 0xCBFC;
+    public static final int SET7l = 0xCBFD;
+    public static final int SET7m = 0xCBFE;
+    public static final int SET7a = 0xCBFF;
 }
